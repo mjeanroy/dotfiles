@@ -11,3 +11,6 @@ alias la='ls -a'
 alias ..='cd ..'
 alias ....='cd ../..'
 
+# Custom browsers
+alias ch='google-chrome'
+alias ff='firefox'
