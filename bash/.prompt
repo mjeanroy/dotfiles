@@ -1,0 +1,15 @@
+##
+# Prompt configuration
+##
+
+# Define colors
+red=$(tput setaf 1)
+yellow=$(tput setaf 3)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+bold=$(tput bold)
+reset=$(tput sgr0)
+
+# Custom PS1
+PS1='[\[$green\]$USER\[$reset\]@\[$red\]$HOSTNAME\[$reset\] \[$blue\]\W\[$reset\]\[$yellow\]$(__git_ps1)\[$reset\]]\$ '
+

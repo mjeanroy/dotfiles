@@ -1,0 +1,13 @@
+##
+# Alias configuration.
+##
+
+# Custom ls
+alias ll='ls -l'
+alias lla='ls -la'
+alias la='ls -a'
+
+# Easier navigation
+alias ..='cd ..'
+alias ....='cd ../..'
+
