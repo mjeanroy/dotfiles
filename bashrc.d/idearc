@@ -1,0 +1,6 @@
+###
+# Intellij Configuration
+###
+
+IDEA_HOME=/opt/idea
+export PATH=${PATH}:${IDEA_HOME}
