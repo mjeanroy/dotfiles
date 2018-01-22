@@ -1,0 +1,8 @@
+####
+# Some aliases for docker & cie.
+####
+
+alias d='docker'
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcr='docker-compose rm'
