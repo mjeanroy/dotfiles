@@ -7,3 +7,6 @@ set number
 
 " Highlight current line
 set cursorline
+
+" Display file title in title bar
+set title
