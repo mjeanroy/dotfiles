@@ -10,3 +10,6 @@ set cursorline
 
 " Display file title in title bar
 set title
+
+" Tabs indent only 2 spaces
+set tabstop=2
