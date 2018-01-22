@@ -1,0 +1,6 @@
+" ####
+" # VIM default configuration
+" ####
+
+" Always show line numbers.
+set number

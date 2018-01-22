@@ -25,12 +25,5 @@ echo "# Source set of custom bashrc files" >> ${HOME}/.bashrc
 echo "source ${DIR}/bashrc.d/index.sh" >> ${HOME}/.bashrc
 echo "" >> ${HOME}/.bashrc
 
-debug "Installing gitconfig file"
-
-if [ -L "${HOME}/.gitconfig" ]; then
-  debug "Remove old gitconfig"
-  rm ${HOME}/.gitconfig
-fi
-
-debug "Creation new symbolic link to gitconfig"
-ln -s ${DIR}/git/gitconfig ${HOME}/.gitconfig
+debug "Installing homerc file"
+${DIR}/homerc/index.sh
