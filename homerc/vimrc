@@ -4,3 +4,6 @@
 
 " Always show line numbers.
 set number
+
+" Highlight current line
+set cursorline
