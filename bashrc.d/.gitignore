@@ -1,0 +1,7 @@
+##
+# GitIgnore
+##
+
+# Ignore private files
+/private
+

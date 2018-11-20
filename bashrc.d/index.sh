@@ -3,9 +3,18 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ME=`basename "${BASH_SOURCE[0]}"`
 
-for f in ${DIR}/*; do
-  if [ "$( basename $f)" != "$ME" ]
-  then
-    source ${f}
-  fi
-done
+function sourceDirectory {
+  for f in ${1}/*; do
+    if [ "$( basename $f)" != "$ME" ]
+    then
+      if [ -d "$f" ]
+      then
+        sourceDirectory $f
+      else
+        source ${f}
+      fi
+    fi
+  done
+}
+
+sourceDirectory $DIR
