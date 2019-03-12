@@ -1,0 +1,8 @@
+##
+# Golang
+##
+
+export GO_HOME=/opt/go
+export GOPATH=~/go
+export PATH=${PATH}:${GO_HOME}/bin:${GOPATH}/bin
+
