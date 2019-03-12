@@ -43,6 +43,9 @@
         # Pull & Rebase
         pur = pull --rebase
 
+        # Squash last 2 commits
+        squash = rebase -i HEAD~2
+
         # Logs
         lg = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(bold blue)<%an>%Creset%C(yellow)%d%Creset'
         lga = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(bold blue)<%an>%Creset%C(yellow)%d%Creset' --all
