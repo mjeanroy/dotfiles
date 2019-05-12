@@ -19,11 +19,18 @@ fi
 debug "Creating new bashrc.d symbolic link"
 ln -s ${DIR}/bashrc.d ${HOME}/.bashrc.d
 
+BASHRC=${HOME}/.bashrc
+
+if [ ! -f ${BASHRC} ]; then
+  BASHRC=${HOME}/.bash_profile
+fi
+
 debug "Adding sourcing of bashrc.d directory to default bashrc file"
-echo "" >> ${HOME}/.bashrc
-echo "# Source set of custom bashrc files" >> ${HOME}/.bashrc
-echo "source ${DIR}/bashrc.d/index.sh" >> ${HOME}/.bashrc
-echo "" >> ${HOME}/.bashrc
+debug "Default bashrc is: ${BASHRC}"
+echo "" >> ${BASHRC}
+echo "# Source set of custom bashrc files" >> ${BASHRC}
+echo "source ${DIR}/bashrc.d/index.sh" >> ${BASHRC}
+echo "" >> ${BASHRC}
 
 debug "Installing homerc file"
 ${DIR}/homerc/index.sh
