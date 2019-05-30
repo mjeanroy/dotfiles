@@ -7,6 +7,10 @@ alias dc='docker-compose'
 alias dcu='docker-compose up'
 alias dcr='docker-compose rm'
 
+alias docker-stop-all='docker stop $(docker ps -a -q)'
+alias docker-rm-all='docker rm $(docker ps -a -q)'
+alias docker-rmi-all='docker rmi $(docker images -q)'
+
 function dbash {
   docker exec -it ${1} bash
 }
