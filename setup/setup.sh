@@ -9,3 +9,6 @@ ${DIR}/03-maven.sh
 ${DIR}/04-docker.sh
 ${DIR}/05-browsers.sh
 ${DIR}/06-ide.sh
+
+sudo apt autoclean
+sudo apt autoremove

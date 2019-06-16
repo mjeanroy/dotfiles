@@ -21,6 +21,7 @@ sudo apt install -y \
   filezilla \
   terminator \
   apt-transport-https \
+  apt-utils \
   ca-certificates \
   gnupg-agent \
   keepassx \

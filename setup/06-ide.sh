@@ -27,8 +27,10 @@ then
   info "VSCode seems already installed, skip."
 else
   sudo apt install -y curl gnupg-agent software-properties-common apt-transport-https wget
-  wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-  sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/microsoft.gpg
+  sudo install -o root -g root -m 644 /tmp/microsoft.gpg /etc/apt/trusted.gpg.d/
+  sudo rm /tmp/microsoft.gpp
+  sudo echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
   sudo apt update -y
   sudo apt install -y code
 fi
