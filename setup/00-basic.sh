@@ -13,7 +13,8 @@ sudo apt install -y \
   vim \
   software-properties-common \
   zip \
-  bzip2
+  bzip2 \
+  python3
 
 info "Checking for main utilities versions"
 
