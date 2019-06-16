@@ -22,7 +22,8 @@ sudo apt install -y \
   terminator \
   apt-transport-https \
   ca-certificates \
-  gnupg-agent
+  gnupg-agent \
+  keepassx
 
 info "Checking for main utilities versions"
 
