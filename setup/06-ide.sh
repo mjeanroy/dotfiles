@@ -24,6 +24,7 @@ if [ -x "$(command -v code)" ]
 then
   info "VSCode seems already installed, skip."
 else
+  sudo apt install -y fonts-liberation libappindicator3-1 libdbusmenu-glib4 libdbusmenu-gtk3-4 libindicator3-7 libxss1 libu2f-udev
   curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
   sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
   sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
