@@ -14,7 +14,8 @@ sudo apt install -y \
   software-properties-common \
   zip \
   bzip2 \
-  python3
+  python3 \
+  filezilla
 
 info "Checking for main utilities versions"
 
