@@ -4,6 +4,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source ${DIR}/common.sh
 
+info "Updating distribution"
+sudo apt update -y && sudo apt upgrade -y
+
 info "Installing main packages"
 sudo apt install -y \
   git \
@@ -15,7 +18,8 @@ sudo apt install -y \
   zip \
   bzip2 \
   python3 \
-  filezilla
+  filezilla \
+  terminator
 
 info "Checking for main utilities versions"
 
