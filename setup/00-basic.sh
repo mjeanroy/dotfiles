@@ -23,7 +23,8 @@ sudo apt install -y \
   apt-transport-https \
   ca-certificates \
   gnupg-agent \
-  keepassx
+  keepassx \
+  meld
 
 info "Checking for main utilities versions"
 
