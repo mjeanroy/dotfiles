@@ -19,7 +19,10 @@ sudo apt install -y \
   bzip2 \
   python3 \
   filezilla \
-  terminator
+  terminator \
+  apt-transport-https \
+  ca-certificates \
+  gnupg-agent
 
 info "Checking for main utilities versions"
 
