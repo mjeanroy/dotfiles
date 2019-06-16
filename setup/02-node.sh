@@ -10,6 +10,7 @@ DEFAULT_NODE_VERSION=10.16.0
 info "Installing NVM"
 read -e -i "$DEFAULT_NVM_VERSION" -p "Choose nvm version: " nvm_version
 
+sudo apt install -y curl
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v${nvm_version}/install.sh | bash
 
 debug "Checking NVM installation"

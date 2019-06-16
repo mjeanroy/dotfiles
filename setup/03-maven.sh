@@ -12,7 +12,9 @@ read -e -i "$DEFAULT_MVN_VERSION" -p "Choose maven version: " mvn_version
 DOWNLOAD_URL="http://apache.mirrors.ovh.net/ftp.apache.org/dist/maven/maven-3/${mvn_version}/binaries/apache-maven-${mvn_version}-bin.tar.gz"
 
 debug "Downloading maven ${mvn_version} (from: ${DOWNLOAD_URL})"
-curl -o /tmp/apache-maven-${mvn_version}-bin.tar.gz ${DOWNLOAD_URL}
+
+sudo apt install -y curl
+curl -L -o /tmp/apache-maven-${mvn_version}-bin.tar.gz ${DOWNLOAD_URL}
 
 debug "Copying maven to /opt"
 sudo rm -f /opt/apache-maven-${mvn_version}-bin.tar.gz
