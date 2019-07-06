@@ -25,7 +25,10 @@ sudo apt install -y \
   ca-certificates \
   gnupg-agent \
   keepassx \
-  meld
+  meld \
+  lm-sensors \
+  hddtemp \
+  psensor
 
 info "Checking for main utilities versions"
 
