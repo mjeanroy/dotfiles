@@ -20,6 +20,8 @@
     rebase = true
 [clean]
     requireForce = false
+[status]
+	showUntrackedFiles = all
     
 [alias] 
     # Add to staged files
