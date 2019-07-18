@@ -1,54 +1,58 @@
 [color]
-        ui = auto
-        whitespace = tabwidth=4
+    ui = auto
+    whitespace = tabwidth=4
 
 [user]
-        name = Mickael Jeanroy
-        email = mickael.jeanroy@gmail.com
+    name = Mickael Jeanroy
+    email = mickael.jeanroy@gmail.com
 
 [merge]
-        tool = meld
+    tool = meld
 [diff]
-        tool = meld
+    tool = meld
 [core]
-        editor = vim
+    editor = vim
 [rerere]
-        enabled = true
-
+    enabled = true
+[rebase]
+    autoStash = true
+[pull]
+    rebase = true
+    
 [alias] 
-        # Add to staged files
-        a = add
-        aa = add -A
+    # Add to staged files
+    a = add
+    aa = add -A
 
-        # View status
-        st = status
-        s = status
+    # View status
+    st = status
+    s = status
 
-        # Branches
-        br = branch
-        bra = branch -a
-        brd = branch -D
+    # Branches
+    br = branch
+    bra = branch -a
+    brd = branch -D
 
-        # Shortcut for amend commands
-        amend = commit --amend
+    # Shortcut for amend commands
+    amend = commit --amend
 
-        # Checkout
-        cob = checkout -b
-        co = checkout
+    # Checkout
+    cob = checkout -b
+    co = checkout
 
-        # Commit shortcut
-        ci = commit
-        c = commit -m
+    # Commit shortcut
+    ci = commit
+    c = commit -m
 
-        # Pull & Rebase
-        pur = pull --rebase
+    # Pull & Rebase
+    pur = pull --rebase
 
-        # Squash last 2 commits
-        squash = rebase -i HEAD~2
+    # Squash last 2 commits
+    squash = rebase -i HEAD~2
 
-        # Logs
-        lg = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(bold blue)<%an>%Creset%C(yellow)%d%Creset'
-        lga = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(bold blue)<%an>%Creset%C(yellow)%d%Creset' --all
-        l = log --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(blue)<%an>%C(yellow)%d%Creset'
-        ln = log --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(blue)<%an>%C(yellow)%d%Creset' -n10
+    # Logs
+    lg = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(bold blue)<%an>%Creset%C(yellow)%d%Creset'
+    lga = log --graph --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(bold blue)<%an>%Creset%C(yellow)%d%Creset' --all
+    l = log --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(blue)<%an>%C(yellow)%d%Creset'
+    ln = log --pretty=format:'%Cred%h%Creset %Cgreen(%ci)%Creset %s %C(blue)<%an>%C(yellow)%d%Creset' -n10
 
