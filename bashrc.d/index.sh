@@ -1,11 +1,17 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-ME=`basename "${BASH_SOURCE[0]}"`
+ME=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)/$(basename -- "$0")")
+DIR=$(dirname "${ME}")
+
+if [ -n "$ZSH_VERSION" ]; then
+  echo "Using zsh ${ZSH_VERSION}"
+elif [ -n "$BASH_VERSION" ]; then
+  echo "Using bash ${BASH_VERSION}"
+fi
 
 function sourceDirectory {
   for f in ${1}/*; do
-    if [ "$( basename $f)" != "$ME" ]
+    if [ "$f" != "$ME" ]
     then
       if [ -d "$f" ]
       then
