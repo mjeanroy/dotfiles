@@ -14,3 +14,7 @@ alias ....='cd ../..'
 # Custom browsers
 alias ch='google-chrome'
 alias ff='firefox'
+
+# Git Utilities
+alias gitup='for i in */.git; do ( echo $i; cd $i/..; git pull; ); done'
+
