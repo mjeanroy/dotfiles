@@ -18,3 +18,14 @@ alias ff='firefox'
 # Git Utilities
 alias gitup='for i in */.git; do ( echo $i; cd $i/..; git pull; ); done'
 
+function pur {
+  pwd=($PWD)
+  for d in */ ; do
+    if [ -d "$pwd/$d/.git" ]
+    then
+      echo "Updating $pwd/$d"
+      cd $pwd/$d && git pull --rebase && cd $pwd
+    fi
+  done
+}
+
