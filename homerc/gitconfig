@@ -51,6 +51,10 @@
     # Pull & Rebase
     pur = pull --rebase
 
+    # Fetch, and rebase from remote branch given in parameter (using remote `origin`).
+    # For exemple: `git refresh master` == `git fetch && git rebase origin/master`
+    refresh = !sh -c 'git fetch && git rebase origin/$1' -
+
     # Squash last 2 commits
     squash = rebase -i HEAD~2
 
