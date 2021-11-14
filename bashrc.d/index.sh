@@ -1,10 +1,7 @@
-#!/bin/bash
-
-DIR="$(dirname "$(readlink -f "$0")")"
-ME=`basename "$0"`
+#!/bin/sh
 
 if [ -n "$ZSH_VERSION" ]; then
-  DIR="$(dirname "$(readlink -f "$0")")"
+  DIR="$( cd "$(dirname "$0")" ; pwd -P )"
   ME=`basename "$0"`
   echo "Using zsh ${ZSH_VERSION}"
 elif [ -n "$BASH_VERSION" ]; then
