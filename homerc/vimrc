@@ -13,3 +13,7 @@ set title
 
 " Tabs indent only 2 spaces
 set tabstop=2
+
+" Emoji shortcuts
+ab :white_check_mark: ✅
+ab :es: 🇪🇸
