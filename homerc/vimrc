@@ -15,5 +15,6 @@ set title
 set tabstop=2
 
 " Emoji shortcuts
+ab :be: 🇧🇪
 ab :white_check_mark: ✅
 ab :es: 🇪🇸
