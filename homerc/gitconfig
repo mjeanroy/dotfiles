@@ -47,10 +47,17 @@
     # Commit shortcut
     ci = commit
     c = commit -m
+    # cy for commit in yolo mode
+    cy = commit --no-verify -m
     wip = commit --no-verify -m 'wip'
 
     # Pull & Rebase
     pur = pull --rebase
+
+    # Push
+    p = push
+    # py for push in yolo mode
+    py = push --no-verify
 
     # Fetch, and rebase from remote branch given in parameter (using remote `origin`).
     # For exemple: `git refresh master` == `git fetch && git rebase origin/master`
