@@ -29,3 +29,6 @@ function pur {
   done
 }
 
+function starthttps {
+  mitmdump --listen-host localhost --listen-port 4043 --mode reverse:http://localhost:$1
+}
