@@ -16,6 +16,7 @@
     enabled = true
 [rebase]
     autoStash = true
+    updateRefs = true
 [pull]
     rebase = true
 [clean]
