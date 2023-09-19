@@ -1,0 +1,8 @@
+##
+# Maven configuration.
+##
+
+# NPM aliases
+alias npmi='npm install --no-fund --no-audit'
+alias npmt='npm test'
+alias npmy='npm why'
