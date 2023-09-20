@@ -4,11 +4,10 @@
 # Intellij Configuration
 ###
 
-GREEN="\033[0;32m"
-YELLOW="\033[0;33m"
-RESET_COLORS="\033[0m"
-
 function git-up {
+  local GREEN="\033[0;32m"
+  local RESET_COLORS="\033[0m"
+
   if [[ -d "./.git" ]]; then
     git pull --rebase
   fi
@@ -23,6 +22,10 @@ function git-up {
 }
 
 function rm-node-modules {
+  local GREEN="\033[0;32m"
+  local YELLOW="\033[0;33m"
+  local RESET_COLORS="\033[0m"
+
   echo "${GREEN}💥 Checking node_modules to delete...${RESET_COLORS}"
   find . -name 'node_modules' -type d -prune
   echo ""
