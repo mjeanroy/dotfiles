@@ -21,6 +21,30 @@ function git-up {
   done
 }
 
+function npm-i {
+  local GREEN="\033[0;32m"
+  local RESET_COLORS="\033[0m"
+
+  if [ -f "./package-lock.json" ]; then
+    echo "${GREEN}⌛ NPM detected, running: npm install --no-audit --no-fund${RESET_COLORS}"
+    echo ""
+    npm install --no-audit --no-fund
+  elif [ -f "./yarn.lock" ]; then
+    echo "${GREEN}⌛ YARN detected, running: yarn install${RESET_COLORS}"
+    echo ""
+    yarn install
+  elif [ -f "./pnpm-lock.yaml" ]; then
+    echo "${GREEN}⌛ PNPM detected, running: pnpm install${RESET_COLORS}"
+    echo ""
+    pnpm install
+  elif [ -f "./package.json" ]; then
+    # Fallback to pnpm by default.
+    echo "${GREEN}⌛ NODE detected, running: pnpm install${RESET_COLORS}"
+    echo ""
+    pnpm install
+  fi
+}
+
 function rm-node-modules {
   local GREEN="\033[0;32m"
   local YELLOW="\033[0;33m"
