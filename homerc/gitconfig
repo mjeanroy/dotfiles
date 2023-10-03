@@ -39,7 +39,7 @@
     brd = branch -D
 
     # Shortcut for amend commands
-    amend = commit --amend
+    amend = commit --no-verify --amend
 
     # Checkout
     cob = checkout -b
@@ -56,9 +56,12 @@
     pur = pull --rebase
 
     # Push
-    p = push
+    p = push --set-upstream
+    pu = push --set-upstream
+    pf = push --force-with-lease
+
     # py for push in yolo mode
-    py = push --no-verify
+    py = push --set-upstream --no-verify
 
     # Cherry Pick
     cp = cherry-pick
