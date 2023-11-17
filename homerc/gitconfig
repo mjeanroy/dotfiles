@@ -52,6 +52,9 @@
     cy = commit --no-verify -m
     wip = commit --no-verify -m 'wip'
 
+    # tl
+    tl = tag -ln --sort=-committerdate
+
     # Pull & Rebase
     pur = pull --rebase
 
