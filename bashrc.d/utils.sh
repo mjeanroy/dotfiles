@@ -16,6 +16,7 @@ function git-up {
     if [[ -d "$dir/.git" ]]; then
       echo "${GREEN}Updating $dir...${RESET_COLORS}"
       (cd $dir && git pull --rebase)
+      (cd $dir && git remote prune origin)
       echo ""
     fi
   done
