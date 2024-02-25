@@ -12,6 +12,9 @@
     tool = meld
 [core]
     editor = vim
+
+    # Configure tab with 2 spaces
+    pager = less -FXRS -x1,5
 [rerere]
     enabled = true
 [rebase]
