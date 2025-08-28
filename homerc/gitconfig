@@ -50,10 +50,10 @@
 
     # Commit shortcut
     ci = commit
-    c = commit -m
+    c = commit -S -m
     # cy for commit in yolo mode
-    cy = commit --no-verify -m
-    wip = commit --no-verify -m 'wip'
+    cy = commit --no-verify -S -m
+    wip = commit --no-verify -S -m 'wip'
 
     # tl
     tl = tag -ln --sort=-committerdate
