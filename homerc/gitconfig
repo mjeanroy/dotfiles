@@ -48,14 +48,14 @@
     su = stash -u
 
     # Shortcut for amend commands
-    amend = commit --no-verify --amend
+    amend = commit -S --no-verify --amend
 
     # Checkout
     cob = checkout -b
     co = checkout
 
     # Commit shortcut
-    ci = commit
+    ci = commit -S
     c = commit -S -m
     # cy for commit in yolo mode
     cy = commit --no-verify -S -m
