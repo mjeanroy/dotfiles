@@ -46,6 +46,30 @@ function npm-i {
   fi
 }
 
+function npm-r {
+  local GREEN="\033[0;32m"
+  local RESET_COLORS="\033[0m"
+
+  if [ -f "./package-lock.json" ]; then
+    echo "${GREEN}⌛ NPM detected, running: npm run $*${RESET_COLORS}"
+    echo ""
+    npm run "$@"
+  elif [ -f "./yarn.lock" ]; then
+    echo "${GREEN}⌛ YARN detected, running: yarn $*${RESET_COLORS}"
+    echo ""
+    yarn "$@"
+  elif [ -f "./pnpm-lock.yaml" ]; then
+    echo "${GREEN}⌛ PNPM detected, running: pnpm run $*${RESET_COLORS}"
+    echo ""
+    pnpm run "$@"
+  elif [ -f "./package.json" ]; then
+    # Fallback to pnpm by default
+    echo "${GREEN}⌛ NODE detected, running: pnpm run $*${RESET_COLORS}"
+    echo ""
+    pnpm run "$@"
+  fi
+}
+
 function rm-node-modules {
   local GREEN="\033[0;32m"
   local YELLOW="\033[0;33m"
@@ -64,3 +88,6 @@ function rm-node-modules {
   echo ""
   echo "${GREEN}🚀 Done!${RESET_COLORS}"
 }
+
+alias ni='npm-i'
+alias nr='npm-r'
