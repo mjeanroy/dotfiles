@@ -50,6 +50,10 @@ function appendSlash(name) {
     return '/';
   }
 
+  if (name === '/') {
+    return name;
+  }
+
   return name.at(-1) === '/' ? name : `${name}/`;
 }
 
@@ -102,6 +106,15 @@ async function bucketFiles(s3uri) {
     .map((line) => line.slice(dir.length));
 }
 
+function getDir(file) {
+  const dir = path.dirname(file);
+  return dir === '.' ? '' : dir;
+}
+
+function removeLeadingSlash(input) {
+  return input.charAt(0) === '/' ? input.slice(1) : input;
+}
+
 async function main() {
   const args = process.argv.slice(2);
 
@@ -133,7 +146,10 @@ async function main() {
   console.log('');
 
   for (const missingFile of missingFiles) {
-    const dirDest = missingFile.slice(0, missingFile.lastIndexOf('/'));
+    const dirDest = removeLeadingSlash(
+      getDir(missingFile)
+    );
+
     const dest = `s3://${path.join(s3Uri.slice('s3://'.length), appendSlash(dirDest))}`;
     const source = path.join(localDir, missingFile);
 
