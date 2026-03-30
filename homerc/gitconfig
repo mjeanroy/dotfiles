@@ -22,6 +22,8 @@
     updateRefs = true
 [pull]
     rebase = true
+[push]
+    default = current
 [clean]
     requireForce = false
 [status]
