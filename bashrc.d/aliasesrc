@@ -32,3 +32,7 @@ function pur {
 function starthttps {
   mitmdump --listen-host localhost --listen-port 4043 --mode reverse:http://localhost:$1
 }
+
+function whatsmyip {
+  curl https://checkip.amazonaws.com/
+}
