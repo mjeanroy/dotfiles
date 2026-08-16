@@ -138,9 +138,19 @@ async function main() {
     missingFiles.delete(remoteFile);
   }
 
+  const extraFiles = new Set(remoteFiles);
+  for (const localFile of localFiles) {
+    extraFiles.delete(localFile);
+  }
+
   console.log('➡️ Files to upload:');
   for (const missingFile of missingFiles) {
     console.log(`  ${missingFile}`);
+  }
+
+  console.log('➡️ Files to delete:');
+  for (const extraFile of extraFiles) {
+    console.log(`  ${extraFile}`);
   }
 
   console.log('');
@@ -169,6 +179,16 @@ async function main() {
 
     console.log(`✅ Uploaded: ${missingFile} (${formattedDuration} seconds)`);
     console.log('');
+  }
+
+  for (const extraFile of extraFiles) {
+    const dest = `s3://${path.join(s3Uri.slice('s3://'.length), extraFile)}`;
+
+    console.log(`🔥 Deleting: ${dest}`)
+
+    await run(
+      `aws s3 rm ${escapeShellArg(dest)}`
+    );
   }
 
   console.log(`🚀Sync Done!`)
